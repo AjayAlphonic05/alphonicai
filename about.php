@@ -146,7 +146,7 @@ include 'includes/header.php';
             <div class="cta-content">
                 <h2>Join Us on This Journey</h2>
                 <p>Let's create something extraordinary together.</p>
-                <a href="contact.php" class="btn btn-primary btn-large">Get in Touch</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Get in Touch</a>
             </div>
         </div>
     </section>

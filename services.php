@@ -26,7 +26,7 @@ include 'includes/header.php';
                         <li>Database Design & Optimization</li>
                         <li>DevOps & CI/CD Implementation</li>
                     </ul>
-                    <a href="contact.php" class="btn btn-primary">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
                 </div>
                 <div class="service-detail-image">
                     <div class="image-placeholder">
@@ -60,7 +60,7 @@ include 'includes/header.php';
                         <li>E-commerce Solutions</li>
                         <li>UI/UX Design & Prototyping</li>
                     </ul>
-                    <a href="contact.php" class="btn btn-primary">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -80,7 +80,7 @@ include 'includes/header.php';
                         <li>Predictive Analytics & Forecasting</li>
                         <li>AI Integration & Consulting</li>
                     </ul>
-                    <a href="contact.php" class="btn btn-primary">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
                 </div>
                 <div class="service-detail-image">
                     <div class="image-placeholder">
@@ -114,7 +114,7 @@ include 'includes/header.php';
                         <li>Container Orchestration (Kubernetes)</li>
                         <li>Cloud Security & Compliance</li>
                     </ul>
-                    <a href="contact.php" class="btn btn-primary">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ include 'includes/header.php';
             <div class="cta-content">
                 <h2>Need a Custom Solution?</h2>
                 <p>We'd love to discuss your specific requirements and how we can help.</p>
-                <a href="contact.php" class="btn btn-primary btn-large">Contact Us Today</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Contact Us Today</a>
             </div>
         </div>
     </section>

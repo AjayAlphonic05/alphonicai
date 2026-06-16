@@ -47,26 +47,26 @@ We offer 19 specialized services across four main categories:
 **DevOps:** Docker, Kubernetes, Jenkins, GitLab CI/CD
 
 ## Contact Information
-**Email:** info@alphonicai.com
+**Email:** support@alphonicai.com
 **Phone:** +1 (234) 567-890
 **Website:** http://localhost/alphonicai/
-**Contact Form:** http://localhost/alphonicai/contact.php
+**Contact Form:** http://localhost/alphonicai/contact
 
 ## Important Pages
-- **Homepage:** http://localhost/alphonicai/index.php
-- **All Services:** http://localhost/alphonicai/services.php
-- **About Us:** http://localhost/alphonicai/about.php
-- **Contact:** http://localhost/alphonicai/contact.php
+- **Homepage:** http://localhost/alphonicai/index
+- **All Services:** http://localhost/alphonicai/services
+- **About Us:** http://localhost/alphonicai/about
+- **Contact:** http://localhost/alphonicai/contact
 
 ## Service Pages (Most Important)
 Priority service offerings:
-- Custom Software Development: /services/custom-software-development.php
-- AI & ML Solutions: /services/ai-ml-solutions.php
-- Cloud Solutions: /services/cloud-solutions.php
-- Web Development: /services/web-development.php
-- Mobile App Development: /services/mobile-app-development.php
-- Enterprise Software: /services/enterprise-software.php
-- SaaS Development: /services/saas-development.php
+- Custom Software Development: /services/custom-software-development
+- AI & ML Solutions: /services/ai-ml-solutions
+- Cloud Solutions: /services/cloud-solutions
+- Web Development: /services/web-development
+- Mobile App Development: /services/mobile-app-development
+- Enterprise Software: /services/enterprise-software
+- SaaS Development: /services/saas-development
 
 ## Company Values
 - **Excellence:** Delivering high-quality solutions with attention to detail

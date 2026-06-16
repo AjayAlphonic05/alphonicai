@@ -12,7 +12,7 @@ include '../includes/header.php';
                 <h1>Custom Software Development</h1>
                 <p class="service-hero-description">Build tailored software solutions that perfectly match your business needs and drive digital transformation</p>
                 <div class="service-cta-buttons">
-                    <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary">Start Your Project</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Start Your Project</a>
                     <a href="#overview" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -80,7 +80,7 @@ include '../includes/header.php';
                     <div class="sidebar-card" style="background: var(--gradient-3); border: none;">
                         <h3 style="color: white;">Ready to Start?</h3>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Let's discuss your custom software needs</p>
-                        <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Free Consultation</a>
+                        <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Free Consultation</a>
                     </div>
                 </div>
             </div>
@@ -234,7 +234,7 @@ include '../includes/header.php';
             <div class="cta-content">
                 <h2>Ready to Build Your Custom Software?</h2>
                 <p>Let's turn your vision into reality with a tailored solution</p>
-                <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary btn-large">Get Started Today</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Get Started Today</a>
             </div>
         </div>
     </section>

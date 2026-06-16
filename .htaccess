@@ -1,0 +1,44 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+RewriteBase /alphonicai/
+
+<If "%{REQUEST_URI} =~ m#^/alphonicai/services(?:/|$)#">
+    DirectorySlash Off
+</If>
+
+# Existing file
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Existing directory except services
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !^/alphonicai/services(/|$) [NC]
+RewriteRule ^ - [L]
+
+# index.php hide
+RewriteCond %{THE_REQUEST} \s/alphonicai/index\.php [NC]
+RewriteRule ^index\.php$ /alphonicai/ [R=301,L]
+
+# Hide .php
+RewriteCond %{THE_REQUEST} \s/alphonicai/(.+)\.php[\s?] [NC]
+RewriteRule ^(.+)\.php$ /alphonicai/$1 [R=301,L]
+
+# Remove trailing slash
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)/$ /alphonicai/$1 [R=301,L]
+
+# Services routing
+RewriteRule ^services/?$ services.php [L]
+RewriteRule ^services/([a-zA-Z0-9-]+)/?$ services.php?page=$1 [L,QSA]
+
+# PHP extension handling
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.+)$ $1.php [L]
+
+</IfModule>
+
+Options -Indexes
+DirectoryIndex index.php

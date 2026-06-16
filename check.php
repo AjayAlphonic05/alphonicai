@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="<?=_APPLICATION_URL;?>images/favicon.png" rel="icon" />
     <title>System Check - AlphonicAI</title>
     <style>
         * {
@@ -158,7 +159,7 @@
 
         <div class="info">
             <h3>📂 Expected File Structure:</h3>
-            <div class="code">
+            <pre class="code">
 alphonicai/
 ├── css/
 │   └── styles.css
@@ -173,7 +174,7 @@ alphonicai/
 ├── contact.php
 ├── test.php
 └── check.php (this file)
-            </div>
+            </pre>
         </div>
 
         <div style="margin-top: 30px;">

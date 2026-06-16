@@ -11,7 +11,7 @@ include '../includes/header.php';
             <h1>Mobile App Development</h1>
             <p class="service-hero-description">Build native and cross-platform mobile applications for iOS and Android that users love</p>
             <div class="service-cta-buttons">
-                <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary">Start Your Project</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Start Your Project</a>
                 <a href="#overview" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
@@ -58,7 +58,7 @@ include '../includes/header.php';
                 <div class="sidebar-card" style="background: var(--gradient-3); border: none;">
                     <h3 style="color: white;">Launch Your App</h3>
                     <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Get a free consultation</p>
-                    <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@ include '../includes/header.php';
         <div class="cta-content">
             <h2>Ready to Build Your Mobile App?</h2>
             <p>Transform your idea into a powerful mobile application</p>
-            <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary btn-large">Start Today</a>
+            <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Start Today</a>
         </div>
     </div>
 </section>

@@ -93,11 +93,17 @@ body::before {
 }
 
 .logo {
+    height: 54px;
+    width: 142px;
     font-size: 1.6rem;
     font-weight: 800;
     letter-spacing: -0.5px;
     cursor: pointer;
     transition: transform 0.3s ease;
+}
+
+.logo img{
+    width: 100%;
 }
 
 .logo:hover {
@@ -130,7 +136,7 @@ body::before {
     transition: all 0.3s ease;
     font-weight: 500;
     position: relative;
-    padding: 0.5rem 0;
+    padding: 0.5rem;
 }
 
 .nav-menu a::after {
@@ -324,6 +330,7 @@ body::before {
     padding: 1.1rem 2.5rem;
     border-radius: 12px;
     text-decoration: none;
+    display: inline-block;
     font-weight: 600;
     transition: all 0.3s ease;
     border: none;

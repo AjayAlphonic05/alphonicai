@@ -11,7 +11,7 @@ include '../includes/header.php';
             <h1>UI/UX Design</h1>
             <p class="service-hero-description">Create beautiful, intuitive user experiences that delight customers and drive engagement</p>
             <div class="service-cta-buttons">
-                <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary">Start Your Project</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Start Your Project</a>
                 <a href="#overview" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
@@ -51,7 +51,7 @@ include '../includes/header.php';
                 <div class="sidebar-card" style="background: var(--gradient-3); border: none;">
                     <h3 style="color: white;">Design Better</h3>
                     <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Create great experiences</p>
-                    <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
                 </div>
             </div>
         </div>
@@ -75,7 +75,7 @@ include '../includes/header.php';
         <div class="cta-content">
             <h2>Ready for Great Design?</h2>
             <p>Create experiences users love</p>
-            <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary btn-large">Start Designing</a>
+            <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Start Designing</a>
         </div>
     </div>
 </section>

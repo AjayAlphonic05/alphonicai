@@ -12,7 +12,7 @@ include '../includes/header.php';
                 <h1>Web Development</h1>
                 <p class="service-hero-description">Create powerful, responsive web applications that deliver exceptional user experiences and drive business growth</p>
                 <div class="service-cta-buttons">
-                    <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary">Start Your Project</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Start Your Project</a>
                     <a href="#overview" class="btn btn-secondary">Learn More</a>
                 </div>
             </div>
@@ -77,7 +77,7 @@ include '../includes/header.php';
                     <div class="sidebar-card" style="background: var(--gradient-3); border: none;">
                         <h3 style="color: white;">Need a Website?</h3>
                         <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Get a free quote for your web project</p>
-                        <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Request Quote</a>
+                        <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Request Quote</a>
                     </div>
                 </div>
             </div>
@@ -132,7 +132,7 @@ include '../includes/header.php';
             <div class="cta-content">
                 <h2>Ready to Launch Your Web Project?</h2>
                 <p>Let's build a web presence that drives results</p>
-                <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary btn-large">Start Building Today</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Start Building Today</a>
             </div>
         </div>
     </section>

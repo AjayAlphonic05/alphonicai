@@ -28,7 +28,7 @@ include 'includes/header.php';
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <a href="mailto:info@alphonicai.com">info@alphonicai.com</a>
+                                <a href="mailto:support@alphonicai.com">support@alphonicai.com</a>
                             </div>
                         </div>
 

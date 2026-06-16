@@ -11,7 +11,7 @@ include '../includes/header.php';
             <h1>Maintenance & Support</h1>
             <p class="service-hero-description">24/7 technical support and ongoing maintenance to keep your software running smoothly</p>
             <div class="service-cta-buttons">
-                <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary">Start Your Project</a>
+                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Start Your Project</a>
                 <a href="#overview" class="btn btn-secondary">Learn More</a>
             </div>
         </div>
@@ -60,7 +60,7 @@ include '../includes/header.php';
                 <div class="sidebar-card" style="background: var(--gradient-3); border: none;">
                     <h3 style="color: white;">Get Support</h3>
                     <p style="color: rgba(255,255,255,0.9); margin-bottom: 1.5rem;">Peace of mind 24/7</p>
-                    <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
+                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary" style="width: 100%; text-align: center; background: white; color: var(--primary-color);">Get Started</a>
                 </div>
             </div>
         </div>
@@ -71,7 +71,7 @@ include '../includes/header.php';
         <div class="cta-content">
             <h2>Ready for Reliable Support?</h2>
             <p>Keep your software running perfectly</p>
-            <a href="<?=_APPLICATION_URL;?>contact.php" class="btn btn-primary btn-large">Get Support</a>
+            <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Get Support</a>
         </div>
     </div>
 </section>
