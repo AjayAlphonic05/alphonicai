@@ -78,6 +78,102 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+    const blogCategoryChips = document.querySelectorAll('.blog-category-chip');
+    const blogPostCards = document.querySelectorAll('.blog-post-card');
+    const blogEmptyState = document.querySelector('.blog-empty-state');
+    const blogPageNumbers = document.querySelectorAll('.blog-page-number');
+    const blogPageControls = document.querySelectorAll('.blog-page-control');
+    const blogPagination = document.querySelector('.blog-pagination');
+
+    if (blogCategoryChips.length && blogPostCards.length) {
+        const postsPerPage = 2;
+        let activeCategory = 'all';
+        let activePage = 1;
+
+        function getFilteredPosts() {
+            return Array.from(blogPostCards).filter(card => {
+                const cardCategories = (card.dataset.categories || '').split(' ');
+                return activeCategory === 'all' || cardCategories.includes(activeCategory);
+            });
+        }
+
+        function renderBlogPosts() {
+            const filteredPosts = getFilteredPosts();
+            const totalPages = Math.max(1, Math.ceil(filteredPosts.length / postsPerPage));
+            activePage = Math.min(activePage, totalPages);
+
+            const startIndex = (activePage - 1) * postsPerPage;
+            const visiblePosts = filteredPosts.slice(startIndex, startIndex + postsPerPage);
+
+            blogPostCards.forEach(card => {
+                card.classList.toggle('is-hidden', !visiblePosts.includes(card));
+            });
+
+            if (blogEmptyState) {
+                blogEmptyState.classList.toggle('show', filteredPosts.length === 0);
+            }
+
+            if (blogPagination) {
+                blogPagination.style.display = filteredPosts.length > postsPerPage ? 'flex' : 'none';
+            }
+
+            blogPageNumbers.forEach(pageLink => {
+                const pageNumber = parseInt(pageLink.dataset.page, 10);
+                pageLink.classList.toggle('active', pageNumber === activePage);
+                pageLink.style.display = pageNumber <= totalPages ? 'inline-flex' : 'none';
+            });
+
+            blogPageControls.forEach(control => {
+                const action = control.dataset.pageAction;
+                control.classList.toggle('is-disabled',
+                    (action === 'prev' && activePage === 1) ||
+                    (action === 'next' && activePage === totalPages)
+                );
+            });
+        }
+
+        blogCategoryChips.forEach(chip => {
+            chip.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                activeCategory = this.dataset.category || 'all';
+                activePage = 1;
+
+                blogCategoryChips.forEach(item => item.classList.remove('active'));
+                this.classList.add('active');
+
+                renderBlogPosts();
+            });
+        });
+
+        blogPageNumbers.forEach(pageLink => {
+            pageLink.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                activePage = parseInt(this.dataset.page, 10) || 1;
+                renderBlogPosts();
+            });
+        });
+
+        blogPageControls.forEach(control => {
+            control.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const totalPages = Math.max(1, Math.ceil(getFilteredPosts().length / postsPerPage));
+
+                if (this.dataset.pageAction === 'prev') {
+                    activePage = Math.max(1, activePage - 1);
+                } else {
+                    activePage = Math.min(totalPages, activePage + 1);
+                }
+
+                renderBlogPosts();
+            });
+        });
+
+        renderBlogPosts();
+    }
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
@@ -135,12 +231,14 @@ document.addEventListener('DOMContentLoaded', function() {
             particle.style.position = 'absolute';
             particle.style.width = Math.random() * 4 + 1 + 'px';
             particle.style.height = particle.style.width;
-            particle.style.background = 'rgba(99, 102, 241, 0.5)';
+            /* OLD: rgba(99, 102, 241, 0.5) */
+            particle.style.background = 'rgba(0, 61, 92, 0.5)';
             particle.style.borderRadius = '50%';
             particle.style.left = Math.random() * 100 + '%';
             particle.style.top = Math.random() * 100 + '%';
             particle.style.pointerEvents = 'none';
-            particle.style.boxShadow = '0 0 10px rgba(99, 102, 241, 0.5)';
+            /* OLD: rgba(99, 102, 241, 0.5) */
+            particle.style.boxShadow = '0 0 10px rgba(0, 61, 92, 0.5)';
             particle.style.animation = `float ${Math.random() * 10 + 10}s ease-in-out infinite`;
             particle.style.animationDelay = Math.random() * 5 + 's';
 
@@ -189,13 +287,15 @@ document.addEventListener('DOMContentLoaded', function() {
     cursorDot.style.cssText = `
         width: 8px;
         height: 8px;
-        background: linear-gradient(135deg, #6366f1, #8b5cf6);
+        /* OLD: linear-gradient(135deg, #6366f1, #8b5cf6) */
+        background: linear-gradient(135deg, #003D5C, #006B9E);
         border-radius: 50%;
         position: fixed;
         pointer-events: none;
         z-index: 9999;
         transition: transform 0.15s ease;
-        box-shadow: 0 0 20px rgba(99, 102, 241, 0.6);
+        /* OLD: rgba(99, 102, 241, 0.6) */
+        box-shadow: 0 0 20px rgba(0, 61, 92, 0.6);
     `;
 
     const cursorOutline = document.createElement('div');
@@ -203,7 +303,8 @@ document.addEventListener('DOMContentLoaded', function() {
     cursorOutline.style.cssText = `
         width: 30px;
         height: 30px;
-        border: 2px solid rgba(99, 102, 241, 0.5);
+        /* OLD: rgba(99, 102, 241, 0.5) */
+        border: 2px solid rgba(0, 61, 92, 0.5);
         border-radius: 50%;
         position: fixed;
         pointer-events: none;
@@ -311,14 +412,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.location.pathname.includes('index.php') || window.location.pathname.endsWith('/')) {
         const heroTitle = document.querySelector('.hero-title');
         if (heroTitle) {
-            const text = heroTitle.innerHTML;
+            const titleTokens = heroTitle.innerHTML.match(/<[^>]+>|[^<]/g) || [];
             heroTitle.innerHTML = '';
             heroTitle.style.opacity = '1';
 
             let i = 0;
             function typeWriter() {
-                if (i < text.length) {
-                    heroTitle.innerHTML += text.charAt(i);
+                if (i < titleTokens.length) {
+                    heroTitle.innerHTML += titleTokens[i];
                     i++;
                     setTimeout(typeWriter, 30);
                 }

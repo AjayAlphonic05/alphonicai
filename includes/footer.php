@@ -11,6 +11,7 @@
                         <li><a href="<?=_APPLICATION_URL;?>">Home</a></li>
                         <li><a href="<?=_APPLICATION_URL;?>services">Services</a></li>
                         <li><a href="<?=_APPLICATION_URL;?>about">About</a></li>
+                        <li><a href="<?=_APPLICATION_URL;?>blog">Blog</a></li>
                         <li><a href="<?=_APPLICATION_URL;?>contact">Contact</a></li>
                     </ul>
                 </div>

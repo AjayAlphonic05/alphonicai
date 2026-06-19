@@ -9,7 +9,7 @@ include 'includes/header.php';
         <div class="hero-background"></div>
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Transform Your Business with AI-Powered Solutions</h1>
+                <h1 class="hero-title">Transform Your Business with <br/> AI-Powered Solutions</h1>
                 <p class="hero-subtitle">We deliver cutting-edge software development, intelligent AI solutions, and seamless cloud services to propel your business into the future.</p>
                 <div class="hero-buttons">
                     <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
