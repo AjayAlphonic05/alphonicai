@@ -30,7 +30,8 @@ RewriteRule ^(.+)/$ /alphonicai/$1 [R=301,L]
 
 # Services routing
 RewriteRule ^services/?$ services.php [L]
-RewriteRule ^services/([a-zA-Z0-9-]+)/?$ services.php?page=$1 [L,QSA]
+RewriteCond %{DOCUMENT_ROOT}/alphonicai/services/$1.php -f
+RewriteRule ^services/([a-zA-Z0-9-]+)/?$ services/$1.php [L,QSA]
 
 # PHP extension handling
 RewriteCond %{REQUEST_FILENAME} !-d
