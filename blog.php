@@ -19,6 +19,7 @@ include 'includes/header.php';
                 <article class="blog-featured-card">
                     <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link" aria-label="Read How to Develop a Logistics App">
                         <div class="blog-visual blog-visual-logistics">
+                            <img src="<?=_APPLICATION_URL;?>images/blog/logistics-warehouse.avif" alt="Logistics warehouse operations with shipment boxes">
                             <span class="blog-visual-icon">
                                 <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17H7a4 4 0 010-8h.5A5.5 5.5 0 0118 10.5 3.5 3.5 0 0117.5 17H15m-6 0l3 3m0 0l3-3m-3 3V10" />
@@ -39,7 +40,9 @@ include 'includes/header.php';
                 <div class="blog-highlight-stack">
                     <article class="blog-mini-card">
                         <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link" aria-label="Read A Complete Guide to Developing Live Video Streaming Applications">
-                            <div class="blog-mini-visual blog-visual-streaming"></div>
+                            <div class="blog-mini-visual blog-visual-streaming">
+                                <img src="<?=_APPLICATION_URL;?>images/blog/live-video-streaming.avif" alt="Video production and streaming setup" loading="lazy">
+                            </div>
                             <div>
                                 <div class="blog-meta">
                                     <span>App Development</span>
@@ -51,7 +54,9 @@ include 'includes/header.php';
                     </article>
                     <article class="blog-mini-card">
                         <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link" aria-label="Read How To Build an eLearning Platform">
-                            <div class="blog-mini-visual blog-visual-elearning"></div>
+                            <div class="blog-mini-visual blog-visual-elearning">
+                                <img src="<?=_APPLICATION_URL;?>images/blog/elearning-platform.avif" alt="Online learning on laptop" loading="lazy">
+                            </div>
                             <div>
                                 <div class="blog-meta">
                                     <span>SaaS</span>
@@ -63,7 +68,9 @@ include 'includes/header.php';
                     </article>
                     <article class="blog-mini-card">
                         <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link" aria-label="Read AI Workflow Automation">
-                            <div class="blog-mini-visual blog-visual-ai"></div>
+                            <div class="blog-mini-visual blog-visual-ai">
+                                <img src="<?=_APPLICATION_URL;?>images/blog/ai-workflow-automation.avif" alt="Artificial intelligence digital interface" loading="lazy">
+                            </div>
                             <div>
                                 <div class="blog-meta">
                                     <span>Artificial Intelligence</span>
@@ -102,7 +109,9 @@ include 'includes/header.php';
                     <div class="blog-post-grid">
                         <article class="blog-post-card" data-categories="mobile-apps ai">
                             <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link">
-                                <div class="blog-card-visual blog-visual-health"></div>
+                                <div class="blog-card-visual blog-visual-health">
+                                    <img src="<?=_APPLICATION_URL;?>images/blog/healthcare-app-planning.avif" alt="Healthcare app planning with medical technology" loading="lazy">
+                                </div>
                                 <div class="blog-card-body">
                                     <div class="blog-meta">
                                         <span>Mobile App</span>
@@ -117,7 +126,9 @@ include 'includes/header.php';
 
                         <article class="blog-post-card" data-categories="mobile-apps web-development">
                             <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link">
-                                <div class="blog-card-visual blog-visual-fintech"></div>
+                                <div class="blog-card-visual blog-visual-fintech">
+                                    <img src="<?=_APPLICATION_URL;?>images/blog/fintech-dashboard.avif" alt="Trading chart and fintech dashboard" loading="lazy">
+                                </div>
                                 <div class="blog-card-body">
                                     <div class="blog-meta">
                                         <span>Fintech</span>
@@ -132,7 +143,9 @@ include 'includes/header.php';
 
                         <article class="blog-post-card" data-categories="web-development mobile-apps">
                             <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link">
-                                <div class="blog-card-visual blog-visual-react"></div>
+                                <div class="blog-card-visual blog-visual-react">
+                                    <img src="<?=_APPLICATION_URL;?>images/blog/react-native-development.avif" alt="Software development code on screen" loading="lazy">
+                                </div>
                                 <div class="blog-card-body">
                                     <div class="blog-meta">
                                         <span>Engineering</span>
@@ -147,7 +160,26 @@ include 'includes/header.php';
 
                         <article class="blog-post-card" data-categories="cloud devops">
                             <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link">
-                                <div class="blog-card-visual blog-visual-cloud"></div>
+                                <div class="blog-card-visual blog-visual-cloud">
+                                    <img src="<?=_APPLICATION_URL;?>images/blog/cloud-server-infrastructure.avif" alt="Cloud server infrastructure" loading="lazy">
+                                </div>
+                                <div class="blog-card-body">
+                                    <div class="blog-meta">
+                                        <span>Cloud</span>
+                                        <span>Apr 18, 2026</span>
+                                    </div>
+                                    <h3>Cloud Migration Planning for High-Growth Digital Products</h3>
+                                    <p>A practical checklist for reducing downtime, improving observability, and modernizing legacy systems.</p>
+                                    <span class="blog-read-more">Read Article</span>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="blog-post-card" data-categories="cloud devops">
+                            <a href="<?=_APPLICATION_URL;?>blog-detail" class="blog-card-link">
+                                <div class="blog-card-visual blog-visual-cloud">
+                                    <img src="<?=_APPLICATION_URL;?>images/blog/cloud-server-infrastructure.avif" alt="Cloud server infrastructure" loading="lazy">
+                                </div>
                                 <div class="blog-card-body">
                                     <div class="blog-meta">
                                         <span>Cloud</span>

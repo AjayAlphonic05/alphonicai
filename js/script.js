@@ -86,7 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const blogPagination = document.querySelector('.blog-pagination');
 
     if (blogCategoryChips.length && blogPostCards.length) {
-        const postsPerPage = 2;
+        const postsPerPage = 4;
         let activeCategory = 'all';
         let activePage = 1;
 
