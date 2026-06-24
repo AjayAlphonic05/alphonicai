@@ -218,7 +218,7 @@
                         </div>
                     </li>
                     <li><a href="<?=_APPLICATION_URL;?>about" class="<?php echo ($current_page == 'about') ? 'active' : ''; ?>">About</a></li>
-                    <li><a href="<?=_APPLICATION_URL;?>blog" class="<?php echo ($current_page == 'blog') ? 'active' : ''; ?>">Blog</a></li>
+                    <!-- <li><a href="<?=_APPLICATION_URL;?>blog" class="<?php echo ($current_page == 'blog') ? 'active' : ''; ?>">Blog</a></li> -->
                     <li><a href="<?=_APPLICATION_URL;?>contact" class="cta-btn <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
                 </ul>
             </div>

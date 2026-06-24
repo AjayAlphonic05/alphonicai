@@ -44,7 +44,7 @@ include '../includes/header.php';
     <section class="about-story" id="solutions" style="padding: 5rem 0 2rem;">
         <div class="container">
             <div class="about-content" style="gap: 2rem;">
-                <div class="about-text" style="max-width: 800px;">
+                <div class="about-text">
                     <p>Most companies have data but don't know how to extract insights from it. They want to leverage AI but can't tell what's actually possible versus what's hype. We close that gap - we identify where machine learning genuinely makes sense, build custom models trained on your data, and deploy them into production systems your team can actually use.</p>
                     <p>Not research projects. Production systems with measurable ROI.</p>
                 </div>

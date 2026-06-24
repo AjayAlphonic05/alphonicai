@@ -33,6 +33,11 @@ RewriteRule ^services/?$ services.php [L]
 RewriteCond %{DOCUMENT_ROOT}/alphonicai/services/$1.php -f
 RewriteRule ^services/([a-zA-Z0-9-]+)/?$ services/$1.php [L,QSA]
 
+# Blog routing
+RewriteRule ^blog/?$ blog.php [L]
+RewriteCond %{DOCUMENT_ROOT}/alphonicai/blog/$1.php -f
+RewriteRule ^blog/([a-zA-Z0-9-]+)/?$ blog/$1.php [L,QSA]
+
 # PHP extension handling
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f

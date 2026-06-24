@@ -13,7 +13,7 @@ include 'includes/header.php';
         </div>
     </section>
 
-    <section class="blog-featured-section">
+    <!-- <section class="blog-featured-section">
         <div class="container">
             <div class="blog-featured-grid">
                 <article class="blog-featured-card">
@@ -83,7 +83,7 @@ include 'includes/header.php';
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <section class="blog-main-section">
         <div class="container">
@@ -94,11 +94,11 @@ include 'includes/header.php';
                             <span class="service-badge">Latest Articles</span>
                             <h2>Fresh Thinking From Our Team</h2>
                         </div>
-                        <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary blog-subscribe-btn">Discuss a Topic</a>
+                        <!-- <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-secondary blog-subscribe-btn">Discuss a Topic</a> -->
                     </div>
 
                     <div class="blog-category-row" aria-label="Blog categories">
-                        <a href="#" class="blog-category-chip active" data-category="all">All</a>
+                        <!-- <a href="#" class="blog-category-chip active" data-category="all">All</a> -->
                         <a href="#" class="blog-category-chip" data-category="ai">AI</a>
                         <a href="#" class="blog-category-chip" data-category="web-development">Web Development</a>
                         <a href="#" class="blog-category-chip" data-category="mobile-apps">Mobile Apps</a>
@@ -207,7 +207,7 @@ include 'includes/header.php';
                 </main>
 
                 <aside class="blog-sidebar">
-                    <div class="blog-sidebar-card">
+                    <!-- <div class="blog-sidebar-card">
                         <h3>Must Read</h3>
                         <ul class="blog-trend-list">
                             <li><a href="<?=_APPLICATION_URL;?>blog-detail">How Much Does It Cost to Develop an App Like Airbnb?</a></li>
@@ -215,7 +215,8 @@ include 'includes/header.php';
                             <li><a href="<?=_APPLICATION_URL;?>blog-detail">Top Features Every Food Delivery App Needs</a></li>
                             <li><a href="<?=_APPLICATION_URL;?>blog-detail">Building Secure APIs for Modern SaaS Products</a></li>
                         </ul>
-                    </div>
+                    </div> -->
+                   
 
                     <div class="blog-sidebar-card">
                         <h3>Popular Topics</h3>

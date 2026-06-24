@@ -1009,11 +1009,12 @@ body::before {
 }
 
 .about-text p {
-    color: var(--text-secondary);
+    color: var(--text-primary);
     line-height: 1.9;
     margin-bottom: 1.8rem;
     font-size: 1.15rem;
     font-weight: 300;
+    text-align: center;
 }
 
 .about-text h2 {
