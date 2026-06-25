@@ -107,6 +107,7 @@ body::before {
 
 .logo img{
     width: 100%;
+    filter: brightness(1.7) contrast(1.15);
 }
 
 .logo:hover {
@@ -349,6 +350,7 @@ body::before {
     position: relative;
     overflow: hidden;
     letter-spacing: 0.3px;
+    text-align:center
 }
 
 .btn::before {
@@ -1864,10 +1866,18 @@ body::before {
     box-shadow: 0 10px 28px rgba(0, 61, 92, 0.24);
 }
 
+
+
 .blog-post-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.blog-post-grid.category-post-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
 }
 
 .blog-post-card.is-hidden {
@@ -1889,12 +1899,25 @@ body::before {
     display: block;
 }
 
+.blog-category-heading{
+    display: flex;
+}
+.blog-view-all-btn{
+    display: inline-block;
+    margin: 0 auto;
+}
+
 .blog-pagination {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
     margin-top: 3rem;
+}
+
+.blog-page-numbers{
+    display: flex;
+    gap: 5px;
 }
 
 .blog-page-number,
@@ -3238,5 +3261,267 @@ body::before {
             "num"
             "duration"
             "content";
+    }
+}
+/* ============================================================
+   Blog post visual variants (per-category gradient backdrop)
+   ============================================================ */
+.blog-card-visual {
+    background: var(--bg-darker);
+}
+
+.blog-card-visual.blog-visual-health {
+    background: radial-gradient(circle at 30% 20%, rgba(0, 184, 212, 0.28), transparent 60%), var(--gradient-1);
+}
+
+.blog-card-visual.blog-visual-fintech {
+    background: radial-gradient(circle at 70% 30%, rgba(0, 229, 255, 0.22), transparent 60%), var(--gradient-3);
+}
+
+.blog-card-visual.blog-visual-react {
+    background: radial-gradient(circle at 25% 75%, rgba(0, 184, 212, 0.25), transparent 60%), var(--gradient-2);
+}
+
+.blog-card-visual.blog-visual-cloud {
+    background: radial-gradient(circle at 60% 25%, rgba(0, 107, 158, 0.3), transparent 60%), var(--gradient-1);
+}
+
+.blog-card-visual.blog-visual-ai {
+    background: radial-gradient(circle at 50% 50%, rgba(0, 229, 255, 0.25), transparent 65%), var(--gradient-2);
+}
+
+/* ============================================================
+   Enquiry Modal
+   ============================================================ */
+body.modal-open {
+    overflow: hidden;
+}
+
+.enquiry-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.enquiry-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.enquiry-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 8, 0.78);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.enquiry-modal-dialog {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 960px;
+    max-height: calc(100vh - 3rem);
+    overflow-y: auto;
+    background: var(--bg-card);
+    border: 1px solid rgba(0, 184, 212, 0.25);
+    border-radius: 22px;
+    padding: 2.8rem;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(0, 61, 92, 0.2);
+    transform: translateY(20px) scale(0.98);
+    transition: transform 0.3s ease;
+}
+
+.enquiry-modal.is-open .enquiry-modal-dialog {
+    transform: translateY(0) scale(1);
+}
+
+.enquiry-modal-close {
+    position: absolute;
+    top: 1.4rem;
+    right: 1.4rem;
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 61, 92, 0.25);
+    border-radius: 50%;
+    color: var(--text-secondary);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.enquiry-modal-close:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-color);
+    background: rgba(0, 184, 212, 0.12);
+}
+
+.enquiry-modal-dialog h2 {
+    font-size: 1.9rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 0.6rem;
+}
+
+.enquiry-modal-dialog > p {
+    color: var(--text-secondary);
+    font-weight: 300;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.enquiry-form .form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.2rem;
+}
+
+.enquiry-form .form-group {
+    margin-bottom: 1.2rem;
+}
+
+.enquiry-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.enquiry-form input,
+.enquiry-form select,
+.enquiry-form textarea {
+    width: 100%;
+    padding: 0.85rem 1.1rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 61, 92, 0.3);
+    border-radius: 10px;
+    color: var(--text-primary);
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.enquiry-form select {
+    cursor: pointer;
+}
+
+.enquiry-form select option {
+    background: var(--bg-card);
+    color: var(--text-primary);
+}
+
+.enquiry-form input:focus,
+.enquiry-form select:focus,
+.enquiry-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(0, 184, 212, 0.06);
+}
+
+.enquiry-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+.enquiry-form button[type="submit"] {
+    width: 100%;
+    margin-top: 0.5rem;
+}
+
+.enquiry-success {
+    display: none;
+    margin-top: 1.2rem;
+    padding: 0.9rem 1.1rem;
+    background: rgba(0, 184, 212, 0.1);
+    border: 1px solid rgba(0, 184, 212, 0.3);
+    border-radius: 10px;
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.enquiry-success.show {
+    display: block;
+}
+
+@media (max-width: 560px) {
+    .enquiry-modal-dialog {
+        padding: 2rem 1.5rem;
+    }
+
+    .enquiry-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+/* ============================================================
+   Blog category tabs (blog.php — switches visible section)
+   ============================================================ */
+.blog-category-sections {
+    position: relative;
+}
+
+.blog-category-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-bottom: 3rem;
+}
+
+.blog-category-tab {
+    color: var(--text-secondary);
+    background: rgba(19, 19, 26, 0.72);
+    border: 1px solid rgba(0, 61, 92, 0.26);
+    border-radius: 999px;
+    padding: 0.65rem 1.2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.blog-category-tab:hover,
+.blog-category-tab.active {
+    color: var(--text-primary);
+    border-color: rgba(0, 184, 212, 0.55);
+    background: rgba(0, 61, 92, 0.34);
+    box-shadow: 0 10px 28px rgba(0, 61, 92, 0.24);
+}
+
+.blog-category-section {
+    display: none;
+}
+
+.blog-category-section.active {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .blog-category-tabs {
+        gap: 0.6rem;
+    }
+
+    .blog-category-tab {
+        padding: 0.55rem 1rem;
+        font-size: 0.88rem;
     }
 }

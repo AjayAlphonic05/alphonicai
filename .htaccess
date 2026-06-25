@@ -11,9 +11,9 @@ RewriteBase /alphonicai/
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
-# Existing directory except services
+# Existing directory except routed sections
 RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !^/alphonicai/services(/|$) [NC]
+RewriteCond %{REQUEST_URI} !^/alphonicai/(services|blog)(/|$) [NC]
 RewriteRule ^ - [L]
 
 # index.php hide
