@@ -1,5 +1,47 @@
 document.addEventListener('DOMContentLoaded', function() {
 
+    // ---- Light/dark theme toggle ----
+    try {
+        const themeToggle = document.getElementById('theme-toggle');
+        const STORAGE_KEY = 'alphonicai-theme';
+
+        function getStoredTheme() {
+            try {
+                return localStorage.getItem(STORAGE_KEY);
+            } catch (err) {
+                return null;
+            }
+        }
+
+        function setStoredTheme(theme) {
+            try {
+                localStorage.setItem(STORAGE_KEY, theme);
+            } catch (err) {}
+        }
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+            }
+        }
+
+        const currentTheme = getStoredTheme() === 'light' ? 'light' : 'dark';
+        applyTheme(currentTheme);
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', function() {
+                const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+                const nextTheme = isLight ? 'dark' : 'light';
+                applyTheme(nextTheme);
+                setStoredTheme(nextTheme);
+            });
+        }
+    } catch (err) {
+        console.error('Theme toggle init failed:', err);
+    }
+
     // ---- Mobile nav toggle ----
     try {
         const mobileMenu = document.getElementById('mobile-menu');

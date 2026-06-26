@@ -7,6 +7,16 @@
     <title><?php echo isset($page_title) ? $page_title : 'AlphonicAI - Innovative Software & AI Solutions'; ?></title>
     <link rel="stylesheet" href="<?=_APPLICATION_URL;?>css/styles.css">
     <link rel="stylesheet" href="<?=_APPLICATION_URL;?>css/service-page.css">
+    <script>
+        (function() {
+            try {
+                var savedTheme = localStorage.getItem('alphonicai-theme');
+                if (savedTheme === 'light' || savedTheme === 'dark') {
+                    document.documentElement.setAttribute('data-theme', savedTheme);
+                }
+            } catch (err) {}
+        })();
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -18,12 +28,22 @@
                 <img src="<?=_APPLICATION_URL;?>images/AlphonicAI_Logo.png" alt="AlphonicAI Logo" class="logo-image" />
                    </a>
                 </div>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-                <ul class="nav-menu">
+                <div class="nav-right">
+                    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Toggle light and dark theme">
+                        <svg class="theme-icon theme-icon-sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <circle cx="12" cy="12" r="4.5" stroke-width="2"/>
+                            <path stroke-linecap="round" stroke-width="2" d="M12 3v2.2M12 18.8V21M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M3 12h2.2M18.8 12H21M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"/>
+                        </svg>
+                        <svg class="theme-icon theme-icon-moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 1020.354 15.354z"/>
+                        </svg>
+                    </button>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+                    <ul class="nav-menu">
                     <li><a href="<?=_APPLICATION_URL;?>" class="<?php echo ($current_page == 'home') ? 'active' : ''; ?>">Home</a></li>
                     <li class="has-mega-menu">
                         <a href="<?=_APPLICATION_URL;?>services" class="<?php echo ($current_page == 'services') ? 'active' : ''; ?>">Services</a>
@@ -221,6 +241,7 @@
                     <!-- <li><a href="<?=_APPLICATION_URL;?>blog" class="<?php echo ($current_page == 'blog') ? 'active' : ''; ?>">Blog</a></li> -->
                     <li><a href="<?=_APPLICATION_URL;?>contact" class="cta-btn <?php echo ($current_page == 'contact') ? 'active' : ''; ?>">Contact Us</a></li>
                 </ul>
+                </div>
             </div>
         </div>
     </nav>

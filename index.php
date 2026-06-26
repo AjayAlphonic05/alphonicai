@@ -12,7 +12,8 @@ include 'includes/header.php';
                 <h1 class="hero-title">Transform Your Business with <br/> AI-Powered Solutions</h1>
                 <p class="hero-subtitle">We deliver cutting-edge software development, intelligent AI solutions, and seamless cloud services to propel your business into the future.</p>
                 <div class="hero-buttons">
-                    <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a>
+                    <button type="button" class="btn btn-primary" data-modal-open="enquiryModal">Get Started</button>
+                    <!-- <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary">Get Started</a> -->
                     <a href="<?=_APPLICATION_URL;?>services" class="btn btn-secondary">Our Services</a>
                 </div>
             </div>
@@ -103,7 +104,9 @@ include 'includes/header.php';
             <div class="cta-content">
                 <h2>Ready to Transform Your Business?</h2>
                 <p>Let's build something amazing together. Contact us today for a free consultation.</p>
-                <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Start Your Project</a>
+                <button type="button" class="btn btn-primary btn-large" data-modal-open="enquiryModal">Start Your Project</button>
+
+                <!-- <a href="<?=_APPLICATION_URL;?>contact" class="btn btn-primary btn-large">Start Your Project</a> -->
             </div>
         </div>
     </section>

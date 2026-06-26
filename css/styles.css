@@ -10,11 +10,41 @@
     --bg-card: #13131a;
     --text-primary: #ffffff;
     --text-secondary: #a1a1aa;
+    --border-subtle: rgba(255, 255, 255, 0.08);
+    --overlay-soft: rgba(255, 255, 255, 0.04);
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    --heading-gradient: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    --nav-bg: rgba(10, 10, 15, 0.8);
+    --nav-bg-solid: rgba(10, 10, 15, 0.98);
+    --pill-bg: rgba(19, 19, 26, 0.72);
+    --hero-glow-1: 0.15;
+    --hero-glow-2: 0.15;
+    --hero-grid: 0.03;
+    --hero-orb: 0.2;
     --gradient-1: linear-gradient(135deg, #003D5C 0%, #006B9E 100%);
     --gradient-2: linear-gradient(135deg, #003D5C 0%, #006B9E 50%, #00B8D4 100%);
     --gradient-3: linear-gradient(to right, #003D5C, #006B9E);
     --glow-blue: 0 0 20px rgba(0, 61, 92, 0.5);
     --glow-purple: 0 0 30px rgba(0, 107, 158, 0.6);
+}
+
+:root[data-theme="light"] {
+    --bg-dark: #eef1f6;
+    --bg-darker: #e3e8ef;
+    --bg-card: #fbfcfe;
+    --text-primary: #161c28;
+    --text-secondary: #4d566b;
+    --border-subtle: rgba(0, 61, 92, 0.14);
+    --overlay-soft: rgba(0, 61, 92, 0.05);
+    --shadow-color: rgba(15, 35, 55, 0.12);
+    --heading-gradient: linear-gradient(135deg, #161c28 0%, #4d566b 100%);
+    --nav-bg: rgba(238, 241, 246, 0.85);
+    --nav-bg-solid: rgba(238, 241, 246, 0.98);
+    --pill-bg: rgba(0, 61, 92, 0.07);
+    --hero-glow-1: 0.07;
+    --hero-glow-2: 0.08;
+    --hero-grid: 0.05;
+    --hero-orb: 0.09;
 }
 
 * {
@@ -67,7 +97,7 @@ body::before {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(10, 10, 15, 0.8);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     z-index: 1000;
@@ -108,6 +138,10 @@ body::before {
 .logo img{
     width: 100%;
     filter: brightness(1.7) contrast(1.15);
+}
+
+:root[data-theme="light"] .logo img {
+    filter: none;
 }
 
 .logo:hover {
@@ -170,7 +204,7 @@ body::before {
     background: var(--gradient-3) !important;
     padding: 0.7rem 1.8rem !important;
     border-radius: 10px !important;
-    color: var(--text-primary) !important;
+    color: #ffffff !important;
 
     box-shadow: 0 4px 15px rgba(0, 61, 92, 0.4);
     position: relative;
@@ -197,6 +231,60 @@ body::before {
 
 .cta-btn::after {
     display: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border-subtle);
+    background: var(--overlay-soft);
+    color: var(--text-primary);
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+    transition: border-color 0.3s ease, background 0.3s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-color);
+    background: rgba(0, 184, 212, 0.12);
+}
+
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: opacity 0.25s ease, transform 0.4s ease;
+}
+
+.theme-icon-sun {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+
+.theme-icon-moon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-icon-sun {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+
+:root[data-theme="light"] .theme-icon-moon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
 }
 
 .menu-toggle {
@@ -232,8 +320,8 @@ body::before {
     bottom: 0;
 
     background:
-        radial-gradient(ellipse at top, rgba(0, 61, 92, 0.15), transparent 50%),
-        radial-gradient(ellipse at bottom, rgba(0, 107, 158, 0.15), transparent 50%);
+        radial-gradient(ellipse at top, rgba(0, 61, 92, var(--hero-glow-1)), transparent 50%),
+        radial-gradient(ellipse at bottom, rgba(0, 107, 158, var(--hero-glow-2)), transparent 50%);
     z-index: 0;
 }
 
@@ -246,8 +334,8 @@ body::before {
     height: 200%;
 
     background:
-        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 61, 92, 0.03) 2px, rgba(0, 61, 92, 0.03) 4px),
-        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 61, 92, 0.03) 2px, rgba(0, 61, 92, 0.03) 4px);
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 61, 92, var(--hero-grid)) 2px, rgba(0, 61, 92, var(--hero-grid)) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0, 61, 92, var(--hero-grid)) 2px, rgba(0, 61, 92, var(--hero-grid)) 4px);
     animation: gridMove 20s linear infinite;
 }
 
@@ -264,7 +352,7 @@ body::before {
     width: 500px;
     height: 500px;
 
-    background: radial-gradient(circle, rgba(0, 61, 92, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 61, 92, var(--hero-orb)) 0%, transparent 70%);
     border-radius: 50%;
     filter: blur(60px);
     animation: float 15s ease-in-out infinite;
@@ -370,7 +458,7 @@ body::before {
 
 .btn-primary {
     background: var(--gradient-3);
-    color: var(--text-primary);
+    color: #ffffff;
 
     box-shadow: 0 10px 40px rgba(0, 61, 92, 0.4);
 }
@@ -433,7 +521,7 @@ body::before {
     margin-bottom: 1rem;
     font-weight: 800;
     letter-spacing: -1px;
-    background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 100%);
+    background: var(--heading-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -1498,7 +1586,7 @@ body::before {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: rgba(10, 10, 15, 0.98);
+        background: var(--nav-bg-solid);
         backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
@@ -1769,8 +1857,8 @@ body::before {
 
 .blog-meta span + span {
     color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.04);
-    border-color: rgba(255, 255, 255, 0.08);
+    background: var(--overlay-soft);
+    border-color: var(--border-subtle);
     font-weight: 700;
 }
 
@@ -1854,7 +1942,7 @@ body::before {
     padding: 0.65rem 1rem;
     border-radius: 999px;
     border: 1px solid rgba(0, 61, 92, 0.26);
-    background: rgba(19, 19, 26, 0.72);
+    background: var(--pill-bg);
     transition: all 0.3s ease;
 }
 
@@ -1932,7 +2020,7 @@ body::before {
     font-weight: 800;
     border-radius: 12px;
     border: 1px solid rgba(0, 61, 92, 0.24);
-    background: rgba(19, 19, 26, 0.78);
+    background: var(--pill-bg);
     transition: all 0.3s ease;
 }
 
@@ -2362,7 +2450,7 @@ body::before {
     justify-content: center;
     background: var(--gradient-3);
     border-radius: 50%;
-    color: var(--text-primary);
+    color: #ffffff;
     font-weight: 900;
     box-shadow: 0 10px 25px rgba(0, 61, 92, 0.3);
 }
@@ -2391,7 +2479,7 @@ body::before {
     color: var(--text-secondary);
     border: 1px solid rgba(0, 184, 212, 0.16);
     border-radius: 999px;
-    background: rgba(19, 19, 26, 0.72);
+    background: var(--pill-bg);
     font-size: 0.85rem;
     font-weight: 700;
 }
@@ -2506,7 +2594,7 @@ body::before {
 .article-content {
     min-width: 0;
     padding: 2.4rem;
-    background: rgba(19, 19, 26, 0.58);
+    background: var(--pill-bg);
     border: 1px solid rgba(0, 61, 92, 0.18);
     border-radius: 20px;
 }
@@ -2612,7 +2700,7 @@ body::before {
     width: 36px;
     height: 36px;
     margin-bottom: 0.8rem;
-    color: var(--text-primary);
+    color: #ffffff;
     background: var(--gradient-3);
     border-radius: 10px;
     font-weight: 900;
@@ -3354,7 +3442,7 @@ body.modal-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
+    background: var(--overlay-soft);
     border: 1px solid rgba(0, 61, 92, 0.25);
     border-radius: 50%;
     color: var(--text-secondary);
@@ -3409,7 +3497,7 @@ body.modal-open {
 .enquiry-form textarea {
     width: 100%;
     padding: 0.85rem 1.1rem;
-    background: rgba(255, 255, 255, 0.04);
+    background: var(--overlay-soft);
     border: 1px solid rgba(0, 61, 92, 0.3);
     border-radius: 10px;
     color: var(--text-primary);
@@ -3489,7 +3577,7 @@ body.modal-open {
 
 .blog-category-tab {
     color: var(--text-secondary);
-    background: rgba(19, 19, 26, 0.72);
+    background: var(--pill-bg);
     border: 1px solid rgba(0, 61, 92, 0.26);
     border-radius: 999px;
     padding: 0.65rem 1.2rem;
