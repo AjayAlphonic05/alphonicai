@@ -790,4 +790,125 @@
     }
 }
 
+/* =========================================================
+   Light theme: bluish hero + bluer cards/hover, matching
+   the homepage hero/footer/card treatment in styles.css
+   ========================================================= */
 
+:root[data-theme="light"] .service-hero {
+    background: var(--hero-bg-gradient, linear-gradient(160deg, #003D5C 0%, #006B9E 100%));
+}
+
+:root[data-theme="light"] .service-hero::before {
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.05) 2px,
+        rgba(255, 255, 255, 0.05) 4px
+    );
+}
+
+:root[data-theme="light"] .service-category {
+    background: rgba(255, 255, 255, 0.14);
+    color: var(--on-deep-text, #ffffff);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+:root[data-theme="light"] .service-hero h1 {
+    color: var(--on-deep-text, #ffffff);
+    text-shadow: 0 0 30px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="light"] .service-hero-description {
+    color: var(--on-deep-text-secondary, rgba(255, 255, 255, 0.78));
+}
+
+:root[data-theme="light"] .service-hero .btn-secondary {
+    color: var(--on-deep-text, #ffffff);
+    border-color: var(--on-deep-border, rgba(255, 255, 255, 0.22));
+}
+
+:root[data-theme="light"] .service-hero .btn-secondary:hover {
+    background: var(--on-deep-overlay, rgba(255, 255, 255, 0.1));
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Cards: bluer tint + active state on hover, instead of flat white */
+:root[data-theme="light"] .sidebar-card:hover,
+:root[data-theme="light"] .tech-item:hover,
+:root[data-theme="light"] .process-content:hover,
+:root[data-theme="light"] .benefit-card:hover,
+:root[data-theme="light"] .related-service-card:hover {
+    background: var(--card-hover-bg, linear-gradient(160deg, var(--bg-card) 0%, #dcebf6 100%));
+    border-color: var(--deep-blue-3, #006B9E);
+}
+
+:root[data-theme="light"] .sidebar-card:active,
+:root[data-theme="light"] .tech-item:active,
+:root[data-theme="light"] .process-content:active,
+:root[data-theme="light"] .benefit-card:active,
+:root[data-theme="light"] .related-service-card:active {
+    background: var(--card-hover-bg, linear-gradient(160deg, var(--bg-card) 0%, #dcebf6 100%));
+    box-shadow:
+        0 10px 28px rgba(0, 61, 92, 0.25),
+        0 0 18px rgba(0, 61, 92, 0.15);
+}
+
+/* Pricing cards: featured plan leans bluer, all cards get an active press state */
+:root[data-theme="light"] .pricing-card {
+    background: var(--bg-dark);
+}
+
+:root[data-theme="light"] .pricing-card.featured {
+    background: linear-gradient(160deg, var(--bg-dark) 0%, #cfe3f0 100%);
+}
+
+:root[data-theme="light"] .pricing-card:hover {
+    border-color: var(--deep-blue-3, #006B9E);
+}
+
+:root[data-theme="light"] .pricing-card:active {
+    transform: translateY(-6px) scale(1.01);
+}
+
+:root[data-theme="light"] .pricing-card.featured:active {
+    transform: translateY(-6px) scale(1.05);
+}
+
+/* Mega-menu: bluish to match footer instead of hardcoded near-black */
+:root[data-theme="light"] .mega-menu {
+    background: var(--footer-bg-gradient, linear-gradient(160deg, #00567f 0%, #003D5C 100%));
+    border-top-color: var(--on-deep-border, rgba(255, 255, 255, 0.22));
+    border-bottom-color: var(--on-deep-border, rgba(255, 255, 255, 0.22));
+    box-shadow: 0 10px 40px rgba(0, 61, 92, 0.35);
+}
+
+:root[data-theme="light"] .mega-menu-column h4 {
+    color: var(--on-deep-text, #ffffff);
+}
+
+:root[data-theme="light"] .mega-menu-link {
+    color: var(--on-deep-text-secondary, rgba(255, 255, 255, 0.78));
+}
+
+:root[data-theme="light"] .mega-menu-link:hover {
+    background: var(--on-deep-overlay, rgba(255, 255, 255, 0.1));
+    color: var(--on-deep-text, #ffffff);
+}
+
+:root[data-theme="light"] .mega-menu-icon {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+:root[data-theme="light"] .mega-menu-icon svg {
+    color: var(--on-deep-text, #ffffff);
+}
+
+:root[data-theme="light"] .mega-menu-text span {
+    color: var(--on-deep-text, #ffffff);
+}
+
+:root[data-theme="light"] .mega-menu-text small {
+    color: var(--on-deep-text-secondary, rgba(255, 255, 255, 0.78));
+}
